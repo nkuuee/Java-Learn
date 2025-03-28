@@ -7,13 +7,10 @@ package Java_Core.Theme_2;
 public class Task_7 {
 
     public static boolean isPalindrome(String text) {
-        text.replaceAll("[^a-zA-Z0-9]", "");
-        StringBuilder stringBuilder = new StringBuilder(text);
-        stringBuilder.reverse();
-        String text1 = stringBuilder.toString();
-        text1.replaceAll("[^a-zA-Z0-9]", "");
+        String text1 = text.replaceAll("[^a-zA-Z0-9]", "");
+        String textReverse = new StringBuilder(text1).reverse().toString();
 
-        return text.equalsIgnoreCase(text1);
+        return text1.equalsIgnoreCase(textReverse);
     }
 
     public static void main(String[] args) {
