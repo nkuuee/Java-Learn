@@ -11,11 +11,13 @@ public class Task_10 {
         for (String role : roles) {
             builder.append(role).append(":\n");
 
-            for (String text : textLines) {
-                String textRefactoring = text.split(": ")[0];
+            for (int i = 0; i < textLines.length; i++) {
+                String[] textRefactoring = textLines[i].split(": ", 2);
 
-                if (role.startsWith(textRefactoring)) {
-                    builder.append(text.substring(textRefactoring.length() + 2))
+                if (role.equals(textRefactoring[0])) {
+                    builder.append(i + 1).append(")")
+                            .append(' ')
+                            .append(textRefactoring[1])
                             .append('\n');
                 }
 
@@ -38,10 +40,8 @@ public class Task_10 {
                 "Аммос Федорович: Вот те на!",
                 "Артемий Филиппович: Вот не было заботы, так подай!",
                 "Лука Лукич: Господи боже! еще и с секретным предписаньем!"};
-
+        
         Task_10 tk = new Task_10();
         System.out.println(tk.printTextPerRole(roles, textLines));
-
-
     }
 }
