@@ -25,13 +25,13 @@ public class Task_2 {
         }
 
         if (s1.charAt(0) == s1.charAt(s1.length() - 1)) {
-            return isPalindrome(s1.substring(s1.length() - 1));
+            return isPalindrome(s1.substring(1,s1.length()-1));
         } else {
             return false;
         }
     }
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
+        System.out.println(isPalindrome("Race:far"));
     }
 }
