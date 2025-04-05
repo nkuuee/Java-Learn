@@ -40,7 +40,7 @@ public class Task_10 {
                 "Аммос Федорович: Вот те на!",
                 "Артемий Филиппович: Вот не было заботы, так подай!",
                 "Лука Лукич: Господи боже! еще и с секретным предписаньем!"};
-        
+
         Task_10 tk = new Task_10();
         System.out.println(tk.printTextPerRole(roles, textLines));
     }

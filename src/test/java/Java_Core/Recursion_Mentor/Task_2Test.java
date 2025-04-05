@@ -16,6 +16,5 @@ class Task_2Test {
     void isPalindrome1() {
         assertTrue(Task_2.isPalindrome("A man, a plan, a canal: Panama"));
         assertTrue(Task_2.isPalindrome("racecar"));
-
     }
 }
