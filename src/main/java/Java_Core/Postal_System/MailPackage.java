@@ -1,5 +1,9 @@
 package Java_Core.Postal_System;
 
+/*
+Посылка, содержимое которой можно получить с помощью метода `getContent`
+*/
+
 public class MailPackage extends AbstractSendable {
     private final Package content;
 
@@ -15,18 +19,14 @@ public class MailPackage extends AbstractSendable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof MailPackage)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
 
         MailPackage that = (MailPackage) o;
 
-        return content.equals(that.content);
+        if (!content.equals(that.content)) return false;
+
+        return true;
     }
 
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + content.hashCode();
-        return result;
-    }
 }

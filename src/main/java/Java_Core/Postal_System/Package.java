@@ -1,5 +1,8 @@
 package Java_Core.Postal_System;
 
+/*
+Класс, который задает посылку. У посылки есть текстовое описание содержимого и целочисленная ценность.
+*/
 public class Package {
     private final String content;
     private final int price;
@@ -20,18 +23,13 @@ public class Package {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Package)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Package aPackage = (Package) o;
 
         if (price != aPackage.price) return false;
-        return content.equals(aPackage.content);
-    }
+        if (!content.equals(aPackage.content)) return false;
 
-    @Override
-    public int hashCode() {
-        int result = content.hashCode();
-        result = 31 * result + price;
-        return result;
+        return true;
     }
 }

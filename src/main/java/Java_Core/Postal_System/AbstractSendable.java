@@ -1,6 +1,7 @@
 package Java_Core.Postal_System;
 
 public abstract class AbstractSendable implements Sendable {
+
     protected final String from;
     protected final String to;
 
@@ -22,18 +23,14 @@ public abstract class AbstractSendable implements Sendable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AbstractSendable)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         AbstractSendable that = (AbstractSendable) o;
 
         if (!from.equals(that.from)) return false;
-        return to.equals(that.to);
+        if (!to.equals(that.to)) return false;
+
+        return true;
     }
 
-    @Override
-    public int hashCode() {
-        int result = from.hashCode();
-        result = 31 * result + to.hashCode();
-        return result;
-    }
 }
